@@ -5,25 +5,31 @@
   --accent-color: #FF8DCB ;
   --title-color: #FFC2E6;
   --menu-text-color: var(--text-color);
+  --decoration-elements-color: var(--text-color);
+  --question-text-color: var(--text-color);
   --accent-color-transparent: rgba(50, 49, 45, 0.4);
   --main-font-weight: 400;
   --accent-font-weight: 700;
   --font-size: 18px;
+  --font-size-title: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
   --bg-image: url(../images/cover-image-light.png);
   --rec-decor-display: none;
 }
 
  @media (prefers-color-scheme: light) {
-  :root{
+  :root {
     --main-font: 'IBM Plex Mono';
     --bg-color: #F1B2CE;
     --text-color: #353430;
     --accent-color: #FF8DCB ;
     --title-color: #FFC2E6;
+    --question-text-color: var(--text-color);
+    --decoration-elements-color: var(--text-color);
     --accent-color-transparent: rgba(50, 49, 45, 0.4);
     --main-font-weight: 400;
     --accent-font-weight: 700;
     --font-size: 18px;
+    --font-size-title: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
     --bg-image: url(../images/cover-image-light.png);
     --rec-decor-display: none;
   }

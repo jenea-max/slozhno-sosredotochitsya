@@ -1,6 +1,6 @@
-.page {
+.page { 
   color: var(--text-color,#F1B2CE);
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace, sans-serif);
   background-color: var(--bg-color, #000028);
   background-image: var(--bg-image);
   background-attachment: fixed;
@@ -25,8 +25,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end:  1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end:  1px solid var(--decoration-elements-color);
+  border-block-start: 1px solid var(--decoration-elements-color);
   inset-block-start: 10px;
   inset-inline-end: 10px;
 }
@@ -36,8 +36,8 @@
   content: " ";
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start:  1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start:  1px solid var(--decoration-elements-color);
+  border-block-end: 1px solid var(--decoration-elements-color);
   inset-block-end: 10px;
   inset-inline-start: 10px;
 }
@@ -54,9 +54,10 @@
 }
 
 .rec-decor::before {
-  content: "REC";
+  content: "rec";
+  text-transform: uppercase;
   color: var(--accent-color);
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace, sans-serif);
   font-size: var(--font-size);
   font-weight: var(--main-font-weight);
 }
@@ -80,17 +81,17 @@
   margin-block-end: 0;
   padding-inline-start: 0;
   display: flex;
-  gap: 13px;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .header__theme-menu-button {
   background-color: transparent;
   border: 1px solid transparent;
-  color: var(--accent-color);
+  color: var(--menu-text-color);
   font-size: var(--font-size);
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace, sans-serif);
   text-transform: lowercase;
   padding-block: 0px;
   padding-inline: 0px;
@@ -98,35 +99,46 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color-transparent, rgba(255, 0, 112, 0.4));
+  outline: 1px solid var(--accent-color-transparent);
+  padding: 0px 13px;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border-color: var(--menu-text-color);
-  padding: 0px 13px;
+  border: 1px solid var(--decoration-elements-color);
+  padding-inline: 13px;
 }
 
 .header__theme-menu-button:focus {
   outline: none;
-  border-block-end: 1px solid var(--menu-text-color);
+  border-block-end: 1px solid var(--decoration-elements-color);
+  inline-size: 44px;
 }
 
 .header_title {
-  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+  font-size: var(--font-size-title);
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--title-color);
   line-height: 82.5%;
   margin-block-start: 0;
   margin-block-end: 0;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace, sans-serif);
   font-weight: var(--accent-font-weight);
   text-align: left;
 }
 
-.word-shadow-decor{
+.word-shadow-decor {
   text-shadow: 2px 2px 0px var(--accent-color); 
   cursor: pointer;
+}
+
+.word-shadow-decor:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.word-shadow-decor:focus {
+  outline: none;
+  border: 1px solid var(--decoration-elements-color);
 }
 
 .header_under-title {
@@ -135,7 +147,7 @@
   align-self: center;
 }
 
-.title-decor {
+.title-decor,.advice-title-decor {
   background-color: var(--accent-color,#FF0070);
   color: #000028;
   font-weight: var(--accent-font-weight);
@@ -156,8 +168,8 @@
 }
 
 .question {
-  color: var(--accent-color);
-  font-family: var(--main-font);
+  color: var(--question-text-color);
+  font-family: var(--main-font, monospace, sans-serif);
   font-weight: var(--accent-font-weight);
   font-size: var(--font-size);
 }
@@ -165,9 +177,15 @@
 .text {
   padding-block-start: 10px;
   font-size: var(--font-size);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: left;
+  font-size: var(--font-size);
+  font-weight: var(--main-font-weight);
+  line-height: 23.4px;
 }
 
-.constant-layot, .changing-layot{
+.constant-layot,.changing-layot {
  display: grid;
  gap: 20px;
 }
@@ -186,6 +204,9 @@
 .gallery {
   display: grid;
   gap: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer {
@@ -195,11 +216,12 @@
   align-items: center;
   block-size: clamp(35.944rem, 12.481vw + 33.344rem, 40.444rem);
   block-size: 100vh;
+  min-height: 668px;
 }
 
 .footer_title {
   text-shadow: 2px 2px 0 var(--accent-color);
-  font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+  font-size: var(--font-size-title);
   color: var(--title-color,#DB00FF);
   line-height: 82.5%;
   margin-block-start: 0;
@@ -207,13 +229,6 @@
   font-family: var(--main-font, sans-serif);
   font-weight: var(--accent-font-weight);
 }
-
-/* Медиазапросы */
-@media (width <= 767px) {
-  .advice-section_title {
-    margin-block-end: 20px;
-  }
-} 
 
 @media (width >= 768px ) {
   .header {
@@ -250,19 +265,23 @@
 
   .problem-section, .advice-section {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
   .constant-layot {
     display: grid;
     gap: 20px;
+    grid-column: span 2;
   }
+
+  .image-section {
+    gap: 20px;
+  }  
 
   .gallery {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
   }
 
@@ -288,6 +307,11 @@
     grid-column: span 1;
   }
 
+  .books {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
   .street {
     grid-row: span 1;
     grid-column: span 2;
@@ -309,6 +333,10 @@
     display: grid;
     grid-auto-columns: min-content auto;
   }
+
+  .header_title,.footer_title{
+    font-size: 120px;
+  }
 }
 
 @media (width >= 1024px) {
@@ -320,7 +348,11 @@
   .header__theme-menu-list{
     display: flex;
     flex-direction: row;
-    gap: 36px;
+    gap: 10px;
+  }
+  
+  .header__theme-menu-button {
+    padding-inline: 13px;
   }
 
   .reason-section {
@@ -338,4 +370,13 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
   }
+
+  .advice-title-decor {
+    background-color: var(--accent-color,#FF0070);
+    color: #000028;
+    font-weight: var(--main-font-weight);
+    font-size: var(--font-size);
+    line-height: 130%;
+  }
+
 }

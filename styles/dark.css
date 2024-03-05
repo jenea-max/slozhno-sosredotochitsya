@@ -5,10 +5,13 @@
   --accent-color: #FF0070 ;
   --title-color: #DB00FF;
   --menu-text-color: var(--accent-color);
+  --decoration-elements-color: var(--accent-color);
+  --question-text-color: var(--accent-color);
   --accent-color-transparent: rgba(255, 0, 112, 0.4);
   --main-font-weight: 400;
   --accent-font-weight: 700;
   --font-size: 18px;
+  --font-size-title: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
   --bg-image: url(../images/cover-image-dark.png);
   --rec-decor-display: flex;
 }
