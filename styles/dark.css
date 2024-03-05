@@ -11,7 +11,8 @@
   --main-font-weight: 400;
   --accent-font-weight: 700;
   --font-size: 18px;
-  --font-size-title: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+  --font-size-title-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-sizi-title-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --bg-image: url(../images/cover-image-dark.png);
   --rec-decor-display: flex;
 }
