@@ -1,4 +1,3 @@
-/* Проверка документа не показывает и не показывала ранее мне ошибок в валидаторе.*/
 .page {
   color: var(--text-color,#F1B2CE);
   font-family: var(--main-font, monospace, sans-serif);
