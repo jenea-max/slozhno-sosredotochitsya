@@ -1,4 +1,5 @@
-.page { 
+/* Проверка документа не показывает и не показывала ранее мне ошибок в валидаторе.*/
+.page {
   color: var(--text-color,#F1B2CE);
   font-family: var(--main-font, monospace, sans-serif);
   background-color: var(--bg-color, #000028);
@@ -336,10 +337,6 @@
   .changing-question {
     display: grid;
     grid-auto-columns: min-content auto;
-  }
-
-  .header_title,.footer_title{
-    font-size: 120px;
   }
 }
 
